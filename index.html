@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/waltograph" rel="stylesheet">
+    <title>Document</title>    
+    <style>
+        body {
+            font-family: "waltograph";
+            font-size: 44px;
+            text-align: center;
+            background-image: url("https://cinepop.com.br/wp-content/uploads/2022/09/0901ZQ_0181MS-scaled-1.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1 id="colorful-text">Disney</h1><br>
+
+    <script>
+        // Lista de cores em RGB
+        var cores = [
+            "rgb(255, 0, 0)",   // Vermelho
+            "rgb(255, 165, 0)", // Laranja
+            "rgb(255, 255, 0)", // Amarelo
+            "rgb(0, 128, 0)",   // Verde
+            "rgb(0, 0, 255)",   // Azul
+            "rgb(75, 0, 130)",  // Indigo
+            "rgb(128, 0, 128)"  // Violeta
+        ];
+
+        var index = 0;
+
+        // Função para alterar a cor de fundo
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = cores[index];
+            index = (index + 1) % cores.length; // Avançar para a próxima cor
+        }
+
+        function changeTextColor() {
+                var h1Element = document.getElementById("colorful-text");
+                h1Element.style.color = cores[index]; // Muda a cor do texto
+                index = (index + 1) % cores.length; // Avançar para a próxima cor
+            }
+
+        // Atualizar a cor do texto a cada 100 milissegundos (0.1 segundo)
+        setInterval(changeTextColor, 1000);
+
+        // Atualizar a cor de fundo a cada 2 segundos (2000 milissegundos)
+        setInterval(changeBackgroundColor, 1000);
+
+    </script>
+</body>
+</html>

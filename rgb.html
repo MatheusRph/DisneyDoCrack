@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cor de Texto em RGB</title>
+    <link href="https://fonts.cdnfonts.com/css/waltograph" rel="stylesheet">
+    <style>
+        body {
+            font-family: "waltograph";
+            font-size: 44px;
+            text-align: center;
+        };
+
+    </style>
+</head>
+<body>
+    <h1 id="colorful-text">Epiléticos NAO LEIAM!</h1><br>
+    <h1 id="colorful-text">CUIDADO AO PISCAR</h1>
+    <script>
+        var cores = [
+            "rgb(255, 0, 0)",   // Vermelho
+            "rgb(255, 165, 0)", // Laranja
+            "rgb(255, 255, 0)", // Amarelo
+            "rgb(0, 128, 0)",   // Verde
+            "rgb(0, 0, 255)",   // Azul
+            "rgb(75, 0, 130)",  // Indigo
+            "rgb(128, 0, 128)"  // Violeta
+        ];
+
+        var index = 0;
+
+        // Função para alterar a cor do texto do h1
+            function changeTextColor() {
+                var h1Element = document.getElementById("colorful-text");
+                h1Element.style.color = cores[index]; // Muda a cor do texto
+                index = (index + 1) % cores.length; // Avançar para a próxima cor
+            }
+
+        // Atualizar a cor do texto a cada 100 milissegundos (0.1 segundo)
+        setInterval(changeTextColor, 200);
+    </script>
+</body>
+</html>
